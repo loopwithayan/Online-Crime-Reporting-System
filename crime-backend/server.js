@@ -19,7 +19,10 @@ const app = express();
 // 3. Simple CORS for Local Development
 // This allows your React app (usually on port 5173) to talk to this server
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://online-crime-reporting-system-1-5t4v.onrender.com/"
+    ],
     credentials: true
 }));
 
@@ -43,5 +46,5 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 // 9. Start Server
 app.listen(PORT, () => {
-    console.log(`🚀 Server started on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
