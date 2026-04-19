@@ -40,8 +40,7 @@ app.get('/', (req, res) => {
 app.use(errorHandler);
 
 // 8. Port Setup
-const PORT = 5000;
-
+const PORT = process.env.PORT || 5000;
 // 9. Start Server
 app.listen(PORT, () => {
     console.log(`🚀 Server started on http://localhost:${PORT}`);
